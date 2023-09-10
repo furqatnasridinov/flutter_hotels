@@ -10,12 +10,15 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: HotelRoute.page,
-          //initial: true,
+          initial: true,
         ),
         AutoRoute(
           page: NumberRoute.page,
-          //path: "/number",
-          initial: true,
+          path: "/number",
+        ),
+        AutoRoute(
+          page: BookingRoute.page,
+          path: "/booking",
         ),
       ];
 }

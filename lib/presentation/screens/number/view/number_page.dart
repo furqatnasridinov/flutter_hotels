@@ -4,13 +4,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hotels/application/rooms/rooms_provider.dart';
-import 'package:flutter_hotels/infrastructure/models/response/rooms_response.dart';
 import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_hotels/infrastructure/services/app_constants.dart';
+import 'package:flutter_hotels/presentation/router/auto_route.dart';
 import 'package:flutter_hotels/presentation/screens/hotel/widget/chip_like_widget.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../custom_widgets/custom_widgets.dart';
 import '../widget/widget.dart';
 
@@ -36,29 +35,15 @@ class _NumberPageState extends ConsumerState<NumberPage> {
     final state = ref.watch(roomsProvider);
     final event = ref.watch(roomsProvider.notifier);
     final rooms = state.rooms?.rooms;
-
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: CustomText(
-          text: "Steigenberger Makadi",
-          fontSize: 18.sp,
-        ),
-        leading: Padding(
-          padding: EdgeInsets.only(left: 12.w),
-          child: IconButton(
-            onPressed: () => context.router.pop(),
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-            ),
-          ),
-        ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(60.h),
+        child:
+            state.rooms == null ? const SizedBox() : const SecondPageAppbar(),
       ),
       body: state.rooms == null
-          ? Center(
+          ? const Center(
               child: CircularProgressIndicator(),
             )
           : ListView.builder(
@@ -204,9 +189,10 @@ class _NumberPageState extends ConsumerState<NumberPage> {
                       ),
                       16.verticalSpace,
                       CustomButton(
-                          onPressed: () {},
-                          width: double.maxFinite,
-                          text: "Выбрать номер"),
+                        onPressed: () {context.router.push(BookingRoute());},
+                        width: double.maxFinite,
+                        text: "Выбрать номер",
+                      ),
                     ],
                   ),
                 );

@@ -9,4 +9,5 @@ class AppColors{
   static const Color blueContainer = Color.fromRGBO(13, 114, 255, 0.1);
   static const Color greyText = Color.fromRGBO(130, 135, 150, 1);
   static const Color greyContainer = Color.fromRGBO(251, 251, 252, 1);
+  static const Color textFieldFillColor = Color.fromRGBO(169, 171, 183, 1);
 }

@@ -10,7 +10,7 @@ class HotelRepository implements HotelRepositoryInterface {
   Future<ApiResult<HotelResponse>> getHotel() async {
     try {
       Dio dio = Dio();
-      final response = await dio.get(AppConstants.hotelsPageUrl);
+      final response = await dio.get(AppConstants.firstPage);
       return ApiResult.success(data: HotelResponse.fromJson(response.data));
     } catch (error) {
       return ApiResult.failure(

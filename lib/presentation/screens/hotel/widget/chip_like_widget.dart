@@ -15,7 +15,8 @@ class ChipLikeWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
       decoration: BoxDecoration(
-        color: AppColors.greyContainer,
+         color: AppColors.greyContainer,
+        //color: Colors.black,
         borderRadius: BorderRadius.circular(5.r),
       ),
       height: 30.h,

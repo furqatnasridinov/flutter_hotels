@@ -12,5 +12,13 @@ class AppRouter extends _$AppRouter {
           page: HotelRoute.page,
           initial: true,
         ),
+        AutoRoute(
+          page: NumberRoute.page,
+          path: "/number",
+        ),
+        AutoRoute(
+          page: BookingRoute.page,
+          path: "/booking",
+        ),
       ];
 }

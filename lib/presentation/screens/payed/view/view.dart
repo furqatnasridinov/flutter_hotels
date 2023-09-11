@@ -1,0 +1,1 @@
+export 'payed_page.dart';

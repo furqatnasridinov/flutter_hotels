@@ -68,22 +68,26 @@ class FirstSection extends StatelessWidget {
                                     child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(15.r),
-                                        child: CachedNetworkImage(
-                                          imageUrl: currentHotel ??
-                                              "assets/images/hotel.png",
-                                          errorWidget: (context, url, error) {
-                                            return Container(
-                                              color: Colors.red,
-                                            );
-                                          },
-                                          placeholder: (context, url) {
-                                            return const SizedBox(
-                                              child: Center(
-                                                child:
-                                                    CircularProgressIndicator(),
-                                              ),
-                                            );
-                                          },
+                                        child: SizedBox(
+                                          height: 257.h,
+                                          child: CachedNetworkImage(
+                                            imageUrl: currentHotel ??
+                                                "assets/images/hotel.png",
+                                                fit: BoxFit.cover,
+                                            errorWidget: (context, url, error) {
+                                              return Container(
+                                                color: Colors.red,
+                                              );
+                                            },
+                                            placeholder: (context, url) {
+                                              return const SizedBox(
+                                                child: Center(
+                                                  child:
+                                                      CircularProgressIndicator(),
+                                                ),
+                                              );
+                                            },
+                                          ),
                                         )
                                         /* Image.network(
                                   currentHotel ?? "",
@@ -94,7 +98,7 @@ class FirstSection extends StatelessWidget {
                                   Align(
                                     alignment: Alignment.bottomCenter,
                                     child: Container(
-                                      margin: EdgeInsets.only(bottom: 5.h),
+                                      margin: EdgeInsets.only(bottom: 10.h),
                                       padding: EdgeInsets.all(2.w),
                                       decoration: BoxDecoration(
                                         color: Colors.white,

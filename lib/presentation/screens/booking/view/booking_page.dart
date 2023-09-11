@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hotels/application/booking/booking_provider.dart';
 import 'package:flutter_hotels/presentation/custom_widgets/custom_widgets.dart';
+import 'package:flutter_hotels/presentation/router/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widget/widget.dart';
@@ -82,7 +83,7 @@ class _BookingPageState extends ConsumerState<BookingPage> {
                       bottom: 28.h,
                     ),
                     child: CustomButton(
-                      onPressed: () {},
+                      onPressed: () {context.router.push(const PayedRoute());},
                       width: double.maxFinite,
                       text: "Оплатить ${state.tottalPrice} ₽",
                     ),

@@ -73,35 +73,37 @@ class _NumberPageState extends ConsumerState<NumberPage> {
                                       margin:
                                           EdgeInsets.symmetric(horizontal: 5.w),
                                       width: double.maxFinite,
-                                      //height: 257.h,
                                       child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(15.r),
-                                          child: CachedNetworkImage(
-                                            imageUrl: currentRoom?.imageUrls
-                                                    ?.elementAt(index) ??
-                                                AppConstants.imageInCaseError,
-                                            fit: BoxFit.cover,
-                                            errorWidget: (context, url, error) {
-                                              return Image.network(
-                                                AppConstants.imageInCaseError,
-                                                fit: BoxFit.cover,
-                                              );
-                                            },
-                                            placeholder: (context, url) {
-                                              return const SizedBox(
-                                                child: Center(
-                                                  child:
-                                                      CircularProgressIndicator(),
-                                                ),
-                                              );
-                                            },
+                                          child: SizedBox(
+                                            height: 257.h,
+                                            child: CachedNetworkImage(
+                                              imageUrl: currentRoom?.imageUrls
+                                                      ?.elementAt(index) ??
+                                                  AppConstants.imageInCaseError,
+                                              fit: BoxFit.cover,
+                                              errorWidget: (context, url, error) {
+                                                return Image.network(
+                                                  AppConstants.imageInCaseError,
+                                                  fit: BoxFit.cover,
+                                                );
+                                              },
+                                              placeholder: (context, url) {
+                                                return const SizedBox(
+                                                  child: Center(
+                                                    child:
+                                                        CircularProgressIndicator(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
                                           )),
                                     ),
                                     Align(
                                       alignment: Alignment.bottomCenter,
                                       child: Container(
-                                        margin: EdgeInsets.only(bottom: 5.h),
+                                        margin: EdgeInsets.only(bottom: 10.h),
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
@@ -189,7 +191,9 @@ class _NumberPageState extends ConsumerState<NumberPage> {
                       ),
                       16.verticalSpace,
                       CustomButton(
-                        onPressed: () {context.router.push(BookingRoute());},
+                        onPressed: () {
+                          context.router.push(BookingRoute());
+                        },
                         width: double.maxFinite,
                         text: "Выбрать номер",
                       ),

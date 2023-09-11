@@ -20,5 +20,9 @@ class AppRouter extends _$AppRouter {
           page: BookingRoute.page,
           path: "/booking",
         ),
+        AutoRoute(
+          page: PayedRoute.page,
+          path: "/payed",
+        ),
       ];
 }

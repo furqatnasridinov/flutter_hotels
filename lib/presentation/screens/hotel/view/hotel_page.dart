@@ -27,7 +27,7 @@ class _HotelPageState extends ConsumerState<HotelPage> {
     final event = ref.watch(hotelProvider.notifier);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      body: state.hotel == null
+      body: state.isLoading
           ? const Center(
               child: CircularProgressIndicator(),
             )

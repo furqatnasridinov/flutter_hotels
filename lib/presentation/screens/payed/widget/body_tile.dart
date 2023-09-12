@@ -12,8 +12,6 @@ class BodyTile extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          width: 94.w,
-          height: 94.h,
           child: Image.asset(
             "assets/images/payed.png",
             fit: BoxFit.cover,

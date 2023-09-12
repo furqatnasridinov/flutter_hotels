@@ -83,7 +83,8 @@ class _NumberPageState extends ConsumerState<NumberPage> {
                                                       ?.elementAt(index) ??
                                                   AppConstants.imageInCaseError,
                                               fit: BoxFit.cover,
-                                              errorWidget: (context, url, error) {
+                                              errorWidget:
+                                                  (context, url, error) {
                                                 return Image.network(
                                                   AppConstants.imageInCaseError,
                                                   fit: BoxFit.cover,

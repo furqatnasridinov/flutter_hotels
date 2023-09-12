@@ -1,12 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_hotels/presentation/custom_widgets/custom_button.dart';
-import 'package:flutter_hotels/presentation/custom_widgets/custom_text.dart';
 import 'package:flutter_hotels/presentation/router/auto_route.dart';
 import 'package:flutter_hotels/presentation/screens/payed/widget/widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 @RoutePage()
 class PayedPage extends StatelessWidget {

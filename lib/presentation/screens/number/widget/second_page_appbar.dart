@@ -20,7 +20,7 @@ class SecondPageAppbar extends StatelessWidget {
           padding: EdgeInsets.only(left: 12.w),
           child: IconButton(
             onPressed: () => context.router.pop(),
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             ),

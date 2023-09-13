@@ -8,9 +8,13 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _appRouter = AppRouter();
+    final appRouter = AppRouter();
     return FutureBuilder(
-      future: Future.wait([setUpDependencies()]),
+      future: Future.wait(
+        [
+          setUpDependencies(),
+        ],
+      ),
       builder: (context, snapshot) {
         return ScreenUtilInit(
           designSize: const Size(375, 812),
@@ -19,7 +23,7 @@ class AppWidget extends StatelessWidget {
           builder: (context, child) {
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              routerConfig: _appRouter.config(),
+              routerConfig: appRouter.config(),
             );
           },
         );

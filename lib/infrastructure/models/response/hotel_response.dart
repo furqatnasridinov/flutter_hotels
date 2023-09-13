@@ -30,12 +30,12 @@ class HotelResponse {
     ratingName = json['rating_name'];
     imageUrls = json['image_urls'].cast<String>();
     aboutTheHotel = json['about_the_hotel'] != null
-        ? new AboutTheHotel.fromJson(json['about_the_hotel'])
+        ?  AboutTheHotel.fromJson(json['about_the_hotel'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data =  Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
     data['adress'] = this.adress;

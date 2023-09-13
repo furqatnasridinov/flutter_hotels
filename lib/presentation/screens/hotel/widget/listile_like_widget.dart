@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_hotels/presentation/custom_widgets/custom_text.dart';
 
+// ignore: must_be_immutable
 class ListileLikeWidget extends StatelessWidget {
   void Function()? onTap;
   final String? title;

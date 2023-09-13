@@ -8,6 +8,7 @@ import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../custom_widgets/custom_widgets.dart';
 
+// ignore: must_be_immutable
 class FirstSection extends StatelessWidget {
   FirstSection({
     required this.state,
@@ -49,7 +50,7 @@ class FirstSection extends StatelessWidget {
             SizedBox(
               //height: 270.h,
               width: double.maxFinite,
-              child: state.hotel!.imageUrls!.isEmpty
+              child: state.hotel == null 
                   ? const Center(child: CircularProgressIndicator())
                   : CarouselSlider.builder(
                       carouselController: carouselController,
@@ -73,7 +74,7 @@ class FirstSection extends StatelessWidget {
                                           child: CachedNetworkImage(
                                             imageUrl: currentHotel ??
                                                 "assets/images/hotel.png",
-                                                fit: BoxFit.cover,
+                                            fit: BoxFit.cover,
                                             errorWidget: (context, url, error) {
                                               return Container(
                                                 color: Colors.red,
@@ -141,24 +142,25 @@ class FirstSection extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5.r),
                 color: AppColors.yellowContainer,
               ),
-              child: state.hotel!.rating == 0 || state.hotel!.ratingName!.isEmpty ?
-              CustomText(text: "Уточняем рейтинг", fontSize: 18.sp) :
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(
-                    Icons.star,
-                    color: AppColors.yellowText,
-                    size: 20.r,
-                  ),
-                  CustomText(
-                    text:
-                        "${state.hotel?.rating ?? ""} ${state.hotel?.ratingName ?? ""}",
-                    fontSize: 16.sp,
-                    textColor: AppColors.yellowText,
-                  )
-                ],
-              ),
+              child:
+                  state.hotel?.rating == 0
+                      ? CustomText(text: "Уточняем рейтинг", fontSize: 18.sp)
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: AppColors.yellowText,
+                              size: 20.r,
+                            ),
+                            CustomText(
+                              text:
+                                  "${state.hotel?.rating ?? ""} ${state.hotel?.ratingName ?? ""}",
+                              fontSize: 16.sp,
+                              textColor: AppColors.yellowText,
+                            )
+                          ],
+                        ),
             ),
             8.verticalSpace,
             CustomText(

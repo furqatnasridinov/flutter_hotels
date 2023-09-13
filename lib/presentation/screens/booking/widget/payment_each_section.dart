@@ -3,6 +3,7 @@ import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_hotels/presentation/custom_widgets/custom_text.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class PaymentEachSection extends StatelessWidget {
   final String firstText;
   final String secondText;

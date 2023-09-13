@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hotels/infrastructure/services/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class CustomTextfield extends StatelessWidget {
   String? initialValue;
   String? labelText;
   //TextEditingController? controller;
-  CustomTextfield({
+  CustomTextfield({super.key, 
     this.initialValue,
     this.labelText,
    // this.controller,

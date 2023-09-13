@@ -18,29 +18,30 @@ class HotelNotifier extends StateNotifier<HotelState> {
   }
 
   Future<void> getHotel(BuildContext context) async {
+    
     print("get hotel triggered");
     await Future.delayed(const Duration(milliseconds: 100));
     setLoading();
     final connect = await AppConnectivity().connectivity();
     if (connect) {
       print("connected to the internet");
-
       final response = await _hotelRepositoryInterface.getHotel();
       response.when(
         success: (data) {
           state = state.copyWith(hotel: data);
           print("success");
+          stopLoading();
         },
         failure: (error, statusCode) {
           AppHelpers.showErrorSnack(context);
           print("failure");
         },
       );
-      stopLoading();
+      
     } else {
       print("not connected to the internet");
       AppHelpers.showNoConnectionSnack(context);
-      stopLoading();
+      
     }
   }
 

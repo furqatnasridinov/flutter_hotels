@@ -193,7 +193,7 @@ class _NumberPageState extends ConsumerState<NumberPage> {
                       16.verticalSpace,
                       CustomButton(
                         onPressed: () {
-                          context.router.push(BookingRoute());
+                          context.router.push(const BookingRoute());
                         },
                         width: double.maxFinite,
                         text: "Выбрать номер",
